@@ -3,7 +3,9 @@ $url = "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-windows.
 $file = "phantomjs-2.0.0-windows.zip"
 $webclient.DownloadFile($url,$file)
 
-Remove-Item .\extracted -Force -Recurse
+If (Test-Path $strFolderName){
+  Remove-Item .\extracted -Force -Recurse
+}
 
 Add-Type -assembly "system.io.compression.filesystem"
 [io.compression.zipfile]::ExtractToDirectory("phantomjs-2.0.0-windows.zip", "extracted")
