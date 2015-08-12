@@ -1,15 +1,20 @@
-$webclient = New-Object System.Net.WebClient
-$url = "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-windows.zip"
-$file = "phantomjs-2.0.0-windows.zip"
-$webclient.DownloadFile($url,$file)
+$zipUrl = "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-windows.zip"
+$zipFile = "phantomjs-2.0.0-windows.zip"
+$zipDir = ".\extracted"
+$phantomJsBinDir = "$zipDir/phantomjs-2.0.0-windows/bin"
 
-If (Test-Path ".\extracted"){
-  Remove-Item .\extracted -Force -Recurse
+echo "phantomJsBinDir $phantomJsBinDir"
+
+$webclient = New-Object System.Net.WebClient
+$webclient.DownloadFile($zipUrl,$zipFile)
+
+If (Test-Path $zipDir){
+  Remove-Item $zipDir -Force -Recurse
 }
 
 Add-Type -assembly "system.io.compression.filesystem"
 [io.compression.zipfile]::ExtractToDirectory("phantomjs-2.0.0-windows.zip", "extracted")
-copy "extracted/phantomjs-2.0.0-windows/bin/phantomjs.exe" phantomjs.exe
+
 Get-ChildItem
 
 echo "$PSScriptRoot" 
@@ -19,7 +24,7 @@ echo "First Print Path"
 echo ($env:Path).Replace(';',"`n")
 
 echo "Set Path"
-$env:Path += ";" + $PSScriptRoot
+$env:Path += ";" + $phantomJsBinDir
 
 echo "Second Print Path"
 echo ($env:Path).Replace(';',"`n")
