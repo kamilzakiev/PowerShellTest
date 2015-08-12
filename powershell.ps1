@@ -8,5 +8,10 @@ Add-Type -assembly "system.io.compression.filesystem"
 copy "extracted/phantomjs-2.0.0-windows/bin/phantomjs.exe" phantomjs.exe
 Get-ChildItem
 
-echo $PSScriptRoot
-Write-Host $PSScriptRoot
+echo "$PSScriptRoot" $PSScriptRoot
+
+echo PATH
+
+SET PATH=%PATH%;$PSScriptRoot
+
+echo PATH
