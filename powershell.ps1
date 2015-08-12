@@ -29,3 +29,5 @@ $env:Path += ";" + $phantomJsBinDir
 echo "Second Print Path"
 echo ($env:Path).Replace(';',"`n")
 
+dir $phantomJsBinDir
+
