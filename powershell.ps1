@@ -12,8 +12,8 @@ Get-ChildItem
 
 echo "$PSScriptRoot" $PSScriptRoot
 
-echo %PATH%
+echo ($env:Path).Replace(';',"`n")
 
-SET PATH=%PATH%;$PSScriptRoot
+SET PATH=$env:Path;$PSScriptRoot
 
-echo %PATH%
+echo ($env:Path).Replace(';',"`n")
