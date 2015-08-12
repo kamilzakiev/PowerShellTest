@@ -1,7 +1,7 @@
 $zipUrl = "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-windows.zip"
 $zipFile = "phantomjs-2.0.0-windows.zip"
-$zipDir = ".\extracted"
-$phantomJsBinDir = "$PSScriptRoot\$zipDir\phantomjs-2.0.0-windows\bin"
+$zipDir = "$PSScriptRoot\extracted"
+$phantomJsBinDir = "$zipDir\phantomjs-2.0.0-windows\bin"
 
 echo "phantomJsBinDir $phantomJsBinDir"
 
