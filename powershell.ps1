@@ -19,7 +19,7 @@ echo "First Print Path"
 echo ($env:Path).Replace(';',"`n")
 
 echo "Set Path"
-SET PATH=$env:Path;$PSScriptRoot
+$env:Path += ";" + $PSScriptRoot
 
 echo "Second Print Path"
 echo ($env:Path).Replace(';',"`n")
