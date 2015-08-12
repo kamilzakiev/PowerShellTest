@@ -4,7 +4,7 @@ $zipDir = "$PSScriptRoot\extracted"
 $phantomJsBinDir = "$zipDir\phantomjs-2.0.0-windows\bin"
 
 echo "phantomJsBinDir $phantomJsBinDir"
-<#
+
 $webclient = New-Object System.Net.WebClient
 $webclient.DownloadFile($zipUrl,$zipFile)
 
@@ -28,4 +28,4 @@ $env:Path += ";" + $phantomJsBinDir
 
 echo "Second Print Path"
 echo ($env:Path).Replace(';',"`n")
-#>
+
