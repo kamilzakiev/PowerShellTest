@@ -10,10 +10,14 @@ Add-Type -assembly "system.io.compression.filesystem"
 copy "extracted/phantomjs-2.0.0-windows/bin/phantomjs.exe" phantomjs.exe
 Get-ChildItem
 
-echo "$PSScriptRoot" $PSScriptRoot
+echo "$PSScriptRoot" 
+echo $PSScriptRoot
 
+echo "First Print Path"
 echo ($env:Path).Replace(';',"`n")
 
+echo "Set Path"
 SET PATH=$env:Path;$PSScriptRoot
 
+echo "Second Print Path"
 echo ($env:Path).Replace(';',"`n")
