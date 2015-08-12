@@ -10,8 +10,8 @@ Get-ChildItem
 
 echo "$PSScriptRoot" $PSScriptRoot
 
-echo PATH
+echo %PATH%
 
 SET PATH=%PATH%;$PSScriptRoot
 
-echo PATH
+echo %PATH%
