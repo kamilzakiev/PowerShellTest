@@ -3,7 +3,7 @@ $url = "https://bitbucket.org/ariya/phantomjs/downloads/phantomjs-2.0.0-windows.
 $file = "phantomjs-2.0.0-windows.zip"
 $webclient.DownloadFile($url,$file)
 
-If (Test-Path $strFolderName){
+If (Test-Path ".\extracted"){
   Remove-Item .\extracted -Force -Recurse
 }
 
